@@ -126,10 +126,19 @@ namespace TestSharpShapes {
 
     [TestMethod]
     public void DefaultRectangleColor() {
-      var shape = new SharpShapes.Rectangle(5,5);
+      var shape = new Rectangle(5,5);
 
       Assert.AreEqual(shape.FillColor, System.Drawing.Color.Bisque);
       Assert.AreEqual(shape.BorderColor, System.Drawing.Color.Tomato);
+    }
+
+    [TestMethod]
+    public void TestScalingBothWays() {
+      var shape = new Rectangle(5, 5);
+      shape.Scale(50);
+      shape.Scale(200);
+      Assert.AreEqual(shape.Height, 5);
+      Assert.AreEqual(shape.Width, 5);
 
     }
   }

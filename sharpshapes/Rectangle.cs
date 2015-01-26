@@ -7,7 +7,7 @@ namespace SharpShapes {
   public class Rectangle : Shape {
  
 
-    public Rectangle(decimal width, decimal height) {
+    public Rectangle(int width, int height) {
       if (height < 1 || width < 1) { throw new ArgumentException(); }
       this.height = height;
       this.width = width;
