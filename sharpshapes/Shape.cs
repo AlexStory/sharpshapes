@@ -7,20 +7,28 @@ using System.Drawing;
 
 
 namespace SharpShapes{
-    public abstract class SharpShapes{
+    public abstract class Shape{
+
       /// <summary>
       /// This is the color of the shape's border whend drawn on the screen
       /// </summary>
       public Color BorderColor { set; get; }
+
       /// <summary>
       /// This is the color of the inside of the shape when drawn on the screen
       /// </summary>
       public Color FillColor { set; get; }
 
+      public Shape() {
+
+        BorderColor = Color.Tomato;
+        FillColor = Color.Bisque;
+      }
+
       /// <summary>
       /// Number of sides a shape has
       /// </summary>
-      public virtual int SidesCount { get; }
+      abstract public int SidesCount { get; }
       
       /// <summary>
       /// Scales the size of the shape based on a perventage value
@@ -28,7 +36,7 @@ namespace SharpShapes{
       /// <param name="percent">
       /// The integer percent you wish to scale the percent by, anything larger than 100 will increase the size
       /// </param>
-      abstract public  void scale(int percent);
+      abstract public  void Scale(int percent);
 
       /// <summary>
       /// Function to find the area of shape
@@ -40,6 +48,6 @@ namespace SharpShapes{
       /// returns the perimiter value of the shape
       /// </summary>
       /// <returns>the perimiter of the shape</returns>
-      abstract public int Perimeter();
+      abstract public decimal Perimeter();
   }    
 }
