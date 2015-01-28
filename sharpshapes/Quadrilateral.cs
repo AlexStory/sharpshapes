@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 
 namespace SharpShapes {
-  public class Square : Rectangle {
+  public abstract class Quadrilateral : Shape {
 
-    public Square(int size)
-      :base (size, size) {}
-
+    public override int SidesCount {
+      get { return 4; }
+    }
   }
 }

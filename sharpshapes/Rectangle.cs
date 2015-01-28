@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace SharpShapes {
-  public class Rectangle : Shape {
+  public class Rectangle : Quadrilateral {
  
 
     public Rectangle(int width, int height) {
@@ -32,9 +32,6 @@ namespace SharpShapes {
       return (Height * 2) + (Width * 2);
     }
 
-    public override int SidesCount {
-      get { return 4; }
-    }
 
     public override void Scale(int percent) {
       if (percent < 1) { throw new ArgumentException(); }
