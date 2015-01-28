@@ -30,7 +30,10 @@ namespace SharpShapes {
     }
 
     public override void Scale(int percent) {
-      throw new NotImplementedException();
+      if (percent < 1) { throw new ArgumentException();}
+      base1 = base1 * percent / 100;
+      base2 = base2 * percent / 100;
+      height = height * percent / 100;
     }
 
     public override decimal Area() {
@@ -38,7 +41,12 @@ namespace SharpShapes {
     }
 
     public override decimal Perimeter() {
-      throw new NotImplementedException();
+      double db1 = (double)Base1;
+      double db2 = (double)Base2;
+      double dh = (double)Height;
+      var s = Math.Sqrt( ( (db2 - db1) * (db2 - db1)) + (dh * dh));
+      decimal ds = (decimal)s;
+      return ds + Base2 + Base1;
     }
   }
 }

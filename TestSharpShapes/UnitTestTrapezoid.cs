@@ -131,13 +131,13 @@ namespace TestSharpShapes {
     [TestMethod]
     public void TestTrapPerimeter() {
       var shape = new Trapezoid(5,8,2);
-      Assert.AreEqual(shape.Perimeter(), 40);
+      Assert.AreEqual(Math.Round(shape.Perimeter(),2),(decimal) 16.61);
     }
-
+    
     [TestMethod]
     public void TestTrapOtherPerimeter() {
-      var shape = new Trapezoid(5,8,2);
-      Assert.AreEqual(shape.Perimeter(), 220);
+      var shape = new Trapezoid(10,16, 4);
+      Assert.AreEqual(Math.Round(shape.Perimeter(), 2),(decimal) 33.21);
     }
 
     [TestMethod]
