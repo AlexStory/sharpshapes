@@ -159,6 +159,20 @@ namespace TestSharpShapes {
 
     }
 
+    [TestMethod]
+    public void TestTrapAngles() {
+      var shape = new Trapezoid(8, 4, 2);
+      Assert.AreEqual(shape.AcuteAngle, 45);
+      
+    }
+
+    [TestMethod]
+    public void MoreAngles() {
+      var shape = new Trapezoid(20, 15, 2);
+
+      Assert.AreEqual(38.66, Math.Round(shape.AcuteAngle, 2));
+    }
+
 
 
   }

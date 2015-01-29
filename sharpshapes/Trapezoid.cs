@@ -27,6 +27,10 @@ namespace SharpShapes {
       this.base1 = base1;
       this.base2 = base2;
       this.height = height;
+
+      double wing = (double)Math.Abs((this.Base1 - this.Base2) / 2);
+      this.AcuteAngle = ((double)Math.Atan((double)height / (double)wing)) * ((double)180 / (double)Math.PI);
+      this.ObtuseAngle = 180 - AcuteAngle;
     }
 
     public override void Scale(int percent) {
@@ -48,5 +52,9 @@ namespace SharpShapes {
       decimal ds = (decimal)s;
       return ds + Base2 + Base1;
     }
+
+    public double AcuteAngle { get; private set; }
+
+    public double ObtuseAngle { get; private set; }
   }
 }
